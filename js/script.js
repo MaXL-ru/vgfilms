@@ -18,6 +18,16 @@ $(document).ready(function () {
       }
     });
   });
+  
+  $('.video-tags a').click(function (e) {
+    var $el = $(this);
+    
+    e.preventDefault();
+    
+    $el.closest('ul').find('a').removeClass('video-tags__a_selected');
+    $el.addClass('video-tags__a_selected');
+  });
+  
   $(document).foundation();
   $('.video-list').bxSlider({
     auto: false,

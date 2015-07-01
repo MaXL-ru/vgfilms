@@ -105,8 +105,7 @@ body {
     //z-index: 1;
     position: absolute;
     z-index: 1;
-    bottom: 18rem;
-    height: 0rem;
+    bottom: 11rem;
     width: 100%;
     .row {
       //max-width: 100%;
@@ -252,4 +251,24 @@ footer {
 
 .ajax_form .form_loader img {
   border: none;
+}
+
+.video-tags {
+  a {
+    color: #888;
+    
+    &:hover, &.video-tags__a_selected {
+      color: #000;
+    }
+  }
+}
+
+.video-list .view {
+  .shadow(0 1rem 0.625rem -0.5rem rgba(0, 0, 0, 0.3));
+  display: inline-block;
+  border: 0.0625rem solid #8a8a8a;
+}
+
+.content-container_black .video-list .view {
+  .shadow(0 1rem 0.625rem -0.5rem rgba(255, 255, 255, 0.3));
 }
