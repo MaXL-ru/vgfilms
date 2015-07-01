@@ -7,9 +7,13 @@
     
     <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet/less" href="js/jquery.bxslider/jquery.bxslider.css">
     <link rel="stylesheet/less" href="css/style.less">
     
     <script src="js/less.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.bpopup.min.js"></script>
+    <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -42,18 +46,21 @@
       <div class="small-12">
         <div class="content-container content-container_white">
           <h2>Муз. видео</h2>
-          <ul class="video-list
-              large-block-grid-3
-              medium-block-grid-2
-              ">
+          <ul class="video-list" style="margin: 0;">
             <li>
-              <a href="#"><img src="i/video1.jpg" alt=""></a>
+              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video1.jpg" alt=""></a>
             </li>
             <li>
-              <a href="#"><img src="i/video2.jpg" alt=""></a>
+              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video2.jpg" alt=""></a>
             </li>
             <li>
-              <a href="#"><img src="i/video3.jpg" alt=""></a>
+              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video3.jpg" alt=""></a>
+            </li>
+            <li>
+              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video1.jpg" alt=""></a>
+            </li>
+            <li>
+              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video2.jpg" alt=""></a>
             </li>
           </ul>
         </div>
@@ -90,6 +97,14 @@
           <p>Тел.: +7 914 7000 365</p>
         </footer>
       </div>
+    </div>
+    
+    <div id="dialog_video" class="dialog hide">
+      <span class="button b-close"><span>X</span></span>
+      <div class="dialog_content"></div>
+    </div>
+    <div id="dialog_video_template" class="hide">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/~id~?vq=hd1080&amp;autoplay=1" allowfullscreen></iframe>
     </div>
   </body>
 </html>
