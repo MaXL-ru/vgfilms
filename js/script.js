@@ -22,7 +22,8 @@ $(document).ready(function () {
   });
   
   $('.video-list').bxSlider({
-    auto: true,
+    auto: false,
+    adaptiveHeight: false,
     controls: true,
     pager: false,
     minSlides: 3,
