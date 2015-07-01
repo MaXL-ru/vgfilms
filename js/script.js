@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // open video dialog
-  $('a[data-youtube-id]').click(function (e) {
+  /*$('a[data-youtube-id]').click(function (e) {
     var $el = $(this),
         $dialog = $('#dialog_video'),
         $content = $dialog.find('.dialog_content'); 
@@ -19,8 +19,8 @@ $(document).ready(function () {
         $content.empty();
       }
     });
-  });
-  
+  });*/
+  $(document).foundation();
   $('.video-list').bxSlider({
     auto: false,
     adaptiveHeight: false,

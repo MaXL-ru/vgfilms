@@ -12,12 +12,14 @@
     
     <script src="js/less.min.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation.reveal.js"></script>
     <script src="js/jquery.bpopup.min.js"></script>
     <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
-    <header class="row">
+    <header>
       <div class="header__youtube">
         <iframe frameborder="0" width="100"
                 allowfullscreen="1"
@@ -79,7 +81,7 @@
           <h2>Съёмочная площадка</h2>
           <ul class="video-list">
             <li>
-              <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video1.jpg" alt=""></a>
+              <a href="#" data-reveal-id="videoModal" data-youtube-id="Uf49lXpIjag"><img src="i/video1.jpg" alt=""></a>
             </li>
             <li>
               <a href="#" data-youtube-id="Uf49lXpIjag"><img src="i/video2.jpg" alt=""></a>
@@ -115,5 +117,16 @@
     <div id="dialog_video_template" class="hide">
       <iframe width="560" height="315" src="http://www.youtube.com/embed/~id~?vq=hd1080&amp;autoplay=1" allowfullscreen></iframe>
     </div>
+    
+    
+    <div id="videoModal" class="reveal-modal large" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">
+      <h2 id="videoModalTitle">Название видео</h2>
+      <div class="flex-video widescreen vimeo">
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/~id~?vq=hd1080&amp;autoplay=1" allowfullscreen></iframe>
+      </div>
+
+      <a class="close-reveal-modal" aria-label="Закрыть">&#215;</a>
+    </div>
+    
   </body>
 </html>
