@@ -160,6 +160,7 @@
 
 .view {
   border: 10px solid #fff;
+  cursor: pointer;
 }
 
 .content-container_white .view {

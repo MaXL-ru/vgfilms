@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // open video dialog
-  /*$('a[data-youtube-id]').click(function (e) {
+  $('[data-youtube-id]').click(function (e) {
     var $el = $(this),
         $dialog = $('#dialog_video'),
         $content = $dialog.find('.dialog_content'); 
@@ -12,14 +12,12 @@ $(document).ready(function () {
         $content.html(
           $('#dialog_video_template').html().replace('~id~', $el.data('youtube-id')
         ));
-        // clear and hide form errors
-        $dialog.find('form .errors').html('').addClass('hidden');
       },
       onClose: function() {
         $content.empty();
       }
     });
-  });*/
+  });
   $(document).foundation();
   $('.video-list').bxSlider({
     auto: false,
