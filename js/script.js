@@ -40,23 +40,33 @@ $(document).ready(function () {
     slideMargin: 30,
     slideWidth: ($('.row:eq(0)').width() - 2 * 30) / 3,
     nextText: 'Вперёд',
-    prevText: 'Назад',
-    /*easing: 'linear',
-    speed: 400
-    onSliderLoad: function (index) {
-      var $sliderEl = $ul;
-
-      $sliderEl.find('li').filter(':lt(3)').addClass('not_in_view');
-      switchSliderClasses($sliderEl, index);
-    },
-    onSlideBefore: function ($slideEl) {
-      var $li = $ul.find('li').filter(':gt(2)');
-
-      $li.removeClass('first_view last_view not_in_view');
-    },
-    onSlideAfter: function ($slideEl, oldIndex, newIndex) {
-      switchSliderClasses($slideEl.closest('ul'), newIndex);
-    }*/
+    prevText: 'Назад'
+  });
+  $('.photo-list').bxSlider({
+    auto: false,
+    adaptiveHeight: false,
+    controls: true,
+    pager: false,
+    minSlides: 4,
+    maxSlides: 4,
+    moveSlides: 1,
+    slideMargin: 30,
+    slideWidth: ($('.row:eq(0)').width() - 2 * 30) / 4,
+    nextText: 'Вперёд',
+    prevText: 'Назад'
   });
   
+  (function () {
+    var secondaryNav = $('.header__line'),
+      secondaryNavTopPosition = secondaryNav.offset().top;
+
+    $(window).on('scroll', function(){
+
+      if($(window).scrollTop() > secondaryNavTopPosition - 300) {
+        secondaryNav.addClass('is-fixed');
+      } else {
+        secondaryNav.removeClass('is-fixed');
+      }
+    });
+  })();
 });

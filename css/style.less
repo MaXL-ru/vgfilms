@@ -112,6 +112,11 @@ body {
       //width: 100%;
     }
     
+    &.is-fixed {
+      position: fixed !important;
+      top: 0;
+    }
+
     &__logo {
       background: url(../i/logo.png);
       width: 11.75rem;
@@ -189,7 +194,7 @@ body {
 
 footer {
   background: #333;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
 }
 
 .mask {
@@ -271,4 +276,69 @@ footer {
 
 .content-container_black .video-list .view {
   .shadow(0 1rem 0.625rem -0.5rem rgba(255, 255, 255, 0.3));
+}
+
+.photo-list li {
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+
+.photo-list__title {
+  color: #000;
+}
+
+.photo-list li:nth-child(3+n) {
+  border-right: none;
+}
+
+.cd-secondary-nav ul {
+  position: fixed;
+  right: 5%;
+  bottom: 20px;
+  visibility: hidden;
+  transform: scale(0);
+  transform-origin: 100% 100%;
+  transition: transform 0.3s, visibility 0s 0.3s;
+}
+
+.cd-secondary-nav ul.is-visible {
+  visibility: visible;
+  transform: scale(1);
+  transition: transform 0.3s, visibility 0s 0s;
+}
+
+.cd-secondary-nav-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 5%;
+  width: 44px;
+  height: 44px;
+}
+
+@media only screen and (min-width: 1170px) {
+  #cd-logo.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the left) */
+    opacity: 0;
+    position: fixed;
+    left: -20%;
+    transition: left 0.3s, opacity 0.3s;
+  }
+  #cd-logo.is-hidden.slide-in {
+    /* slide in when the secondary navigation gets fixed */
+    left: 5%;
+    opacity: 1;
+  }
+ 
+  .cd-btn.is-hidden {
+    /* assign a position fixed and move outside the viewport (on the right) */
+    opacity: 0;
+    position: fixed;
+    right: -20%;
+    transition: right 0.3s, opacity 0.3s;
+  }
+  .cd-btn.is-hidden.slide-in {
+    /* slide in when the secondary nav gets fixed */
+    right: 5%;
+    opacity: 1;
+  }
 }
