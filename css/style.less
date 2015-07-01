@@ -82,6 +82,12 @@ body {
   right: -4rem;
 }
 
+@media screen and (max-width: 80rem) {
+  .bx-wrapper .bx-controls-direction {
+    display: none;
+  }
+}
+
 /*
   Main styles
 */
@@ -95,12 +101,13 @@ body {
   }
   
   &__line {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    bottom: 4.6875rem;
-    bottom: 25rem;
-    height: 12rem;
-    
+    /*position: absolute;
+    z-index: 1;
+    bottom: 18rem;
+    height: 0rem;
+    */
     &__logo {
       background: url(../i/logo.png);
       width: 11.75rem;
@@ -117,11 +124,11 @@ body {
     &__menu {
       background: #fff;
       padding: 0.8rem 0;
-      margin-left: 20px;
       ul {
         li {
-          //padding: 0 1rem;
+          padding: 0 1rem;
           border-left: 0.1875rem solid #000;
+          text-align: center;
           
           &:first-child {
             border-left: none;
@@ -129,7 +136,7 @@ body {
           
           a {
             color: #000;
-            //font-size: 1.5rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
           }
         }
