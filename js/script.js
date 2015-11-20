@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  $('.header__youtube').css('height',window.innerHeight + 'px');
+});
+
+$(document).ready(function () {
   // open video dialog
   $('[data-youtube-id]').click(function (e) {
     var $el = $(this),
@@ -61,12 +65,62 @@ $(document).ready(function () {
       secondaryNavTopPosition = secondaryNav.offset().top;
 
     $(window).on('scroll', function(){
-
-      if($(window).scrollTop() > secondaryNavTopPosition - 300) {
+      if($(window).scrollTop() > secondaryNavTopPosition - 150) {
         secondaryNav.addClass('is-fixed');
       } else {
         secondaryNav.removeClass('is-fixed');
       }
     });
   })();
+  $('.calculator__container').click(function () {
+    var $el = $(this);
+    
+    $el.closest('ul').find('.calculator__container')
+            .removeClass('calculator__container_selected');
+    
+    $el.addClass('calculator__container_selected');
+    
+    $el.closest('ul').find('input[type="radio"]').prop('checked', false);
+    $el.find('input[type="radio"]').prop('checked', true);
+  });
+  $('.photo-list a').fancybox(
+{
+helpers : {
+        overlay : {
+            locked: false
+        }
+    }
 });
+
+});
+
+(function () {
+  var vgCalculator = angular.module('vgAngular', []);
+  
+  vgCalculator.controller(
+    'vgCalculatorController',
+    [
+      '$scope',
+      function ($scope) {
+        $scope.types = [
+          {
+            name: 'Реклама',
+            description: 'Проекты, содержащие прямую рекламу',
+            formats: [
+              '1', '2', '3', '4', '5'
+            ]
+          },
+          {
+            name: 'Музыкальное видео',
+            description: 'Проекты музыкального характера в исполнении артистов',
+            formats: [
+              '1', '2', '3', '4', '5'
+            ]
+          }
+        ];
+      }
+    ]
+  );
+  
+  angular.bootstrap(document, ['vgAngular']);
+})();

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet/less" href="css/style1.css">
     <link rel="stylesheet/less" href="js/jquery.bxslider/jquery.bxslider.css">
+    <link rel="stylesheet/less" href="css/jquery.fancybox.css">
     <link rel="stylesheet/less" href="css/style.less">
     
     <script src="js/less.min.js"></script>
@@ -17,7 +18,8 @@
     <script src="js/foundation.reveal.js"></script>
     <script src="js/jquery.bpopup.min.js"></script>
     <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/angular.min.js"></script>
   </head>
   <body>
     <header>
@@ -26,92 +28,95 @@
                 allowfullscreen="1"
                 title="VG Films at work"
                 src="https://www.youtube.com/embed/CnJyKB7-S-g?showinfo=0&amp;rel=0&amp;controls=0&amp;modestbranding=0&amp;wmode=transparent&amp;iv_load_policy=3&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fvgfilms.ru"
-                style="width: 100%; height: 750px; left: 0px; top: 0px; position: relative;"></iframe>
+                style="width: 100%; height: 100%; left: 0px; top: 0px; position: relative;"></iframe>
       </div>
       <div class="header__line">
-        <div class="row">
-          <div class="column small-2">
-            <div class="header__line__logo">
-              <a href="#"><!-- --></a>
+        
+          <div class="row">
+            <div class="column small-2">
+              <div class="header__line__logo">
+                <a href="#"><!-- --></a>
+              </div>
+            </div>
+            <div class="column small-10">
+              <div class="header__line__title">Video Garage Films</div>
+              <nav class="header__line__menu">
+                <ul class="medium-block-grid-6">
+                  <li><a href="#music">Муз. видео</a></li>
+                  <li><a href="#adv">Реклама</a></li>
+                  <li><a href="#sport">Спорт видео</a></li>
+                  <li><a href="#art">Арт видео</a></li>
+                  <li><a href="#price">Цены</a></li>
+                  <li><a href="#tools">Оборудование</a></li>
+                </ul>
+              </nav>
             </div>
           </div>
-          <div class="column small-10">
-            <nav class="header__line__menu">
-              <ul class="medium-block-grid-6">
-                <li><a href="#">Муз. видео</a></li>
-                <li><a href="#">Реклама</a></li>
-                <li><a href="#">Спорт видео</a></li>
-                <li><a href="#">Арт видео</a></li>
-                <li><a href="#">Цены</a></li>
-                <li><a href="#">Оборудование</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+        
       </div>
     </header>
     
-    <div class="row">
-      <div class="small-12">
-        <div class="content-container content-container_white">
+    <div class="content-container content-container_white">
+      <div class="row">
+        <div class="small-12">
           <div class="row">
             <div class="column small-3">
-              <h2>Муз. видео</h2>
+              <h2><a name="music"></a>Муз. видео</h2>
             </div>
-            <div class="column small-5 small-offset-1 end">
+            <!--<div class="column small-5 small-offset-1 end">
               <ul class="small-block-grid-3 video-tags">
                 <li><a href="#" data-tag="rap">Rap music</a></li>
                 <li><a href="#" data-tag="rock">Rock music</a></li>
                 <li><a href="#" data-tag="pop">Pop music</a></li>
               </ul>
-            </div>
+            </div>-->
           </div>
           <ul class="video-list" style="margin: 0">
             <li>
-              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+              <div class="view view-first" data-youtube-id="oE98hL8mKLE">
                 <img src="i/video1.jpg" alt="">
                 <div class="mask">
-                  <span class="title">Tasy Nails за кадром</span>
+                  <span class="title">Tasy Nails за кадром1</span>
                   <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
                 </div>
               </div>
             </li>
             
             <li>
-              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+              <div class="view view-first" data-youtube-id="9OTO_UtDTC8">
                 <img src="i/video2.jpg" alt="">
                 <div class="mask">
-                  <span class="title">Tasy Nails за кадром</span>
+                  <span class="title">Tasy Nails за кадром2</span>
                   <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
                 </div>
               </div>
             </li>
             
             <li>
-              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+              <div class="view view-first" data-youtube-id="http://www.youtube.com/watch?v=5LEqT7Lr2hI">
                 <img src="i/video3.jpg" alt="">
                 <div class="mask">
-                  <span class="title">Tasy Nails за кадром</span>
+                  <span class="title">Tasy Nails за кадром3</span>
                   <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
                 </div>
               </div>
             </li>
             
             <li>
-              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+              <div class="view view-first" data-youtube-id="uQwOggqvOx0">
                 <img src="i/video1.jpg" alt="">
                 <div class="mask">
-                  <span class="title">Tasy Nails за кадром</span>
+                  <span class="title">Tasy Nails за кадром4</span>
                   <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
                 </div>
               </div>
             </li>
             
             <li>
-              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+              <div class="view view-first" data-youtube-id="UkgMchOf9Kk">
                 <img src="i/video2.jpg" alt="">
                 <div class="mask">
-                  <span class="title">Tasy Nails за кадром</span>
+                  <span class="title">Tasy Nails за кадром5 </span>
                   <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
                 </div>
               </div>
@@ -121,9 +126,9 @@
       </div>
     </div>
     
-    <div class="row">
-      <div class="small-12">
-        <div class="content-container content-container_white">
+    <div class="content-container content-container_white">
+      <div class="row">
+        <div class="small-12">
           <h2>Съёмочная площадка</h2>
           <ul class="video-list" style="margin: 0">
             <li>
@@ -183,7 +188,66 @@
     <div class="row">
       <div class="small-12">
         <div class="content-container content-container_black">
-          <h2>Съёмочная площадка</h2>
+          <h2><a name="adv"></a>Реклама</h2>
+          <ul class="video-list">
+            <li>
+              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+                <img src="i/video1.jpg" alt="">
+                <div class="mask">
+                  <span class="title">Tasy Nails за кадром</span>
+                  <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
+                </div>
+              </div>
+            </li>
+            
+            <li>
+              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+                <img src="i/video2.jpg" alt="">
+                <div class="mask">
+                  <span class="title">Tasy Nails за кадром</span>
+                  <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
+                </div>
+              </div>
+            </li>
+            
+            <li>
+              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+                <img src="i/video3.jpg" alt="">
+                <div class="mask">
+                  <span class="title">Tasy Nails за кадром</span>
+                  <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
+                </div>
+              </div>
+            </li>
+            
+            <li>
+              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+                <img src="i/video1.jpg" alt="">
+                <div class="mask">
+                  <span class="title">Tasy Nails за кадром</span>
+                  <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
+                </div>
+              </div>
+            </li>
+            
+            <li>
+              <div class="view view-first" data-youtube-id="Uf49lXpIjag">
+                <img src="i/video2.jpg" alt="">
+                <div class="mask">
+                  <span class="title">Tasy Nails за кадром</span>
+                  <p>Рассказ о том, как проходили съёмки музыкального клипа группы Tasy Nails на песню Sinner.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-container content-container_white">
+      <div class="row">
+        <div class="small-12">
+          <h2><a name="sport"></a>Спорт-видео</h2>
           <ul class="video-list">
             <li>
               <div class="view view-first" data-youtube-id="Uf49lXpIjag">
@@ -241,8 +305,8 @@
     
     <div class="row">
       <div class="small-12">
-        <div class="content-container content-container_white">
-          <h2>Арт</h2>
+        <div class="content-container content-container_black">
+          <h2><a name="art"></a>Арт-видео</h2>
           <ul class="video-list">
             <li>
               <div class="view view-first" data-youtube-id="Uf49lXpIjag">
@@ -298,65 +362,134 @@
       </div>
     </div>
     
+    <div class="row calculator" ng-controller="vgCalculatorController">
+      <div class="small-12 content-container_white">
+        <div class="calculator__title">
+          Тип проекта
+        </div>
+        <ul class="small-block-grid-5" data-ng-repeat="type in types">
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">{{type.name}}</div>
+            <div class="calculator__type-description">
+              {{type.description}}
+            </div>
+
+          </div></li>
+        </ul>
+        <ul class="small-block-grid-5">
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Реклама</div>
+            <div class="calculator__type-description">
+              Проекты, содержащие прямую рекламу
+            </div>
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Музыкальное видео</div>
+            <div class="calculator__type-description">
+              Проекты музыкального характера в исполнении артистов
+            </div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Спортивное видео</div>
+            <div class="calculator__type-description">
+              Проекты, действующие в рамках определённых видов спорта
+            </div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Арт видео</div>
+            <div class="calculator__type-description">
+              Проекты, относящие к разряду напрвлений исскуства, не носящих рекламынй характер
+            </div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Фильм</div>
+            <div class="calculator__type-description">
+              Короткометражные фильмы
+            </div>
+
+          </div></li>
+        </ul>
+      </div>
+      
+      <div class="small-12 content-container_white calc_cont">
+        <div class="calculator__title">
+          Формат
+        </div>
+        <ul class="small-block-grid-5">
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Авто\Мото спорт</div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Вело спорт</div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Водный спорт</div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Комадный спорт</div>
+
+          </div></li>
+          <li><div class="calculator__container">
+            <div class="calculator__type-name">Другое</div>
+
+          </div></li>
+        </ul>
+      </div>
+    </div>
+    
     <div class="row">
       <div class="small-12">
         <div class="content-container content-container_white">
-          <h2>Оборудование</h2>
+          <h2><a name="tools"></a>Оборудование</h2>
           <ul class="photo-list">
+            
             <li>
-              <a href="">
+              <a title="Квадрокоптер" href="#photo1">
                 <img src="i/o/1.jpg" alt="Inspire">
                 <span class="photo-list__title">Квадрокоптер</span>
               </a>
             </li>
+            
             <li>
-              <a href="">
+              <a href="#photo2" title="Подводный бокс">
                 <img src="i/o/2.jpg" alt="Inspire">
+                <span class="photo-list__title">Подводный бокс</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#photo3" title="Дым машина">
                 <img src="i/o/3.jpg" alt="Inspire">
+                <span class="photo-list__title">Дым машина</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#photo4" title="Камера">
                 <img src="i/o/4.jpg" alt="Inspire">
+                <span class="photo-list__title">Камера</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#photo5" title="Операторский кран">
                 <img src="i/o/5.jpg" alt="Inspire">
+                <span class="photo-list__title">Операторский кран</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#photo6" title="Комплект объективов">
                 <img src="i/o/6.jpg" alt="Inspire">
+                <span class="photo-list__title">Комплект объективов</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#photo7" title="Система прожекторов">
                 <img src="i/o/7.jpg" alt="Inspire">
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="i/o/8.jpg" alt="Inspire">
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="i/o/9.jpg" alt="Inspire">
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="i/o/10.jpg" alt="Inspire">
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src="i/o/11.jpg" alt="Inspire">
+                <span class="photo-list__title">Система прожекторов</span>
               </a>
             </li>
           </ul>
@@ -364,12 +497,169 @@
       </div>
     </div>
     
+    <div class="hide">
+                <div id="photo1"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/1.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Квадракоптер</div>
+                      <p>Аэросъемка с&nbsp;неба на&nbsp;большой удаленности.<br />
+                      Максимальная скорость: 80&nbsp;км/ч<br />
+                      Максимальная высота полета: 4500&nbsp;м<br />
+                      Максимально допустимая скорость ветра: 10&nbsp;м/с<br />
+                      Максимальное время полета: около 18&nbsp;минут<br />
+                      Зависание в&nbsp;помещении: активно по&nbsp;умолчанию<br />
+                      Диапазон рабочих температур: От&nbsp;-10&deg; до&nbsp;40&deg; C</p>
+                      <p>Сенсор: CMOS Sony EXMOR 1/2,3''<br />
+                      Рабочее разрешение: 12,4&nbsp;Мпикс<br />
+                      Максимальный размер изображения 4000&times;3000<br />
+                      Диапазон ISO: 100&ndash;6400<br />
+                      FOV (Поле зрения): 94&deg;<br />
+                      Объектив: f/2,8 (аналог 20&nbsp;мм)<br />
+                      9 элементов в&nbsp;9 группах<br />
+                      Асферический объектив<br />
+                      Фильтр искажений<br />
+                      Ультрафиолетовый фильтр<br />
+                      Режим записи видео: UHD (4K): 4096&times;2160p24/25?3840&times;2160p24/25/30; FHD: 1920&times;1080p24/25/30/48/50/60; HD: 1280&times;720p24/25/30/48/50/60<br />
+                      Скорость передачи данных для хранения видео 60&nbsp;Мбит/с</p>
+                  </div>
+                </div></div>
+      
+      
+                <div id="photo2"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/2.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Подводный бокс</div>
+                      <p>Изготовленный специально для камеры Sony <nobr>NEX-5</nobr>, этот бокс, позволяет осуществлять фото и&nbsp;видео съемку под водой на&nbsp;глубине до&nbsp;40&nbsp;метров, кроме того, он&nbsp;способен защитить камеру от&nbsp;ударов и&nbsp;даже во&nbsp;время падения на&nbsp;жесткую поверхность с&nbsp;высоты 1&nbsp;метр. Для обеспечения эффективной работы вспышки под водой, на&nbsp;боксе предусмотрен диффузорный рассеиватель.</p>
+                      <p>Безопасная глубина погружения: 40&nbsp;м, (станадрт IPX 8)<br />
+                      Безопасная высота падения: 1&nbsp;м<br />
+                      Рабочая температура: -5&nbsp;&mdash; <nobr>40 &deg;C</nobr>&deg;<br />
+                      Материал: поликарбонат, резина, сталь<br />
+                      Габариты: 160 / 125 / 95&nbsp;мм<br />
+                      Вес: 420гр</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo3"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/3.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Дым машина</div>
+                    <p>Генераторы дыма и&nbsp;тумана используются для создания эффекта объёмности света в&nbsp;пространстве во&nbsp;время выступления артистов или во&nbsp;время танцев либо просто для эффекта задымления.<br />
+                    В&nbsp;незадымлённой среде свет не&nbsp;отражается от&nbsp;воздуха и&nbsp;можно лишь наблюдать только бегающие по&nbsp;полу и&nbsp;стенам разноцветные пятна. С&nbsp;присутствием в&nbsp;помещении задымления пространство заполняется объёмными лучами двигающимися под музыку, создавая при этом потрясающую атмосферу<br />
+                    Дым машина,<br />
+                    0,5 л&nbsp;емкость для жидкости,<br />
+                    мощность: 600 W,<br />
+                    вес: 3,5 кг.,<br />
+                    управление: on/off кабель управление,<br />
+                    время нагрева: 8&nbsp;мин.<br />
+                    выход дыма на&nbsp;4&nbsp;м</p>
+                  </div>
+                </div></div>
+    
+                <div id="photo4"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/4.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Камера</div>
+                    <p>Canon 70d<br />
+                    20,<nobr>2-мегапиксельная</nobr> <nobr>КМОП-матрица</nobr> формата <nobr>APS-C</nobr> &laquo;Dual Pixel CMOS AF&raquo;;<br />
+                    расположенные на&nbsp;матрице датчики фазовой фокусировки;<br />
+                    процессор DIGIC 5+;<br />
+                    видеосъемка 1080p30 с&nbsp;автофокусом и&nbsp;возможностью использования внешнего микрофона;<br />
+                    система автофокуса на&nbsp;основе 19 крестообразных датчиков с&nbsp;чувствительностью до&nbsp;-0,5 EV;<br />
+                    Nikon D600<br />
+                    Сенсор размера 35,9&times;24&nbsp;мм с&nbsp;разрешением 24&nbsp;миллиона пикселей. Диапазон чувствительности&nbsp;&mdash; от&nbsp;100 до&nbsp;6400 единиц;<br />
+                    Запись Full HD&nbsp;видео до&nbsp;30 кадров за&nbsp;секунду, высокий битрейт, ручные настройки, некомпрессионный выход HDMI, вход для микрофона и&nbsp;наушников, ручной контроль уровня громкости</p>
+                  </div>
+                </div></div>
+                
+                <div id="photo5"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/5.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Операторский кран</div>
+                    <p>Использование операторского крана, дает возможность получить значительные преимущества при работе с&nbsp;камерой, как в&nbsp;студии, так и&nbsp;на&nbsp;выезде, по&nbsp;сравнению с&nbsp;работой видеокамерой с&nbsp;плеча или со&nbsp;штатива. Внутрикадровая динамика меняющегося видеоряда создает эффект завораживающий зрителя.<br />
+                    Характеристика:<br />
+                    Длинна стрелы 4.5&nbsp;м;<br />
+                    <nobr>2-ых</nobr> позиционная голова;<br />
+                    Дистанционное управление головой;<br />
+                    Дистанционное управление zoom.</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo6"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/6.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Комплект объективов</div>
+                    <p>Объектив Sigma 18&ndash;35 f1,8;<br />
+                    Объектив Nikon 24&ndash;85&nbsp;мм;<br />
+                    Объектив Nikon 80&ndash;200&nbsp;мм;<br />
+                    Объектив Nikon 85&nbsp;мм;<br />
+                    Объектив Nikon 35&nbsp;мм;<br />
+                    Объектив Nikon 24&nbsp;мм;<br />
+                    Объектив 16&nbsp;мм, f2,8<br />
+                    Объектив Sony 16&nbsp;мм;<br />
+                    Объектив Sony 16&ndash;50&nbsp;мм;</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo7"><div class="row">
+                  <div class="column small-8">
+                    <img src="i/o/7.jpg" alt="Inspire">
+                  </div>
+                  <div class="column small-4">
+                    <div class="photo-list__title_info">Система прожекторов</div>
+                    
+                  </div>
+                </div></div>
+      
+</div>
+    
     <div class="row">
       <div class="small-12">
         <footer>
+          <div class="row">
+            <div class="column small-2">
+              <ul class="small-block-grid-5">
+                <li>
+                  <a target="_blank" href="https://vk.com/vg_films" title="VGFilms ВКонтакте">
+                    <img src="i/vk.png">
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://www.facebook.com/videogaragefilms/" title="VGFilms Facebook">
+                    <img src="i/fb.png">
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://twitter.com/VIDEO_GARAGE_VL" title="VGFilms Twitter">
+                    <img src="i/twitter.png">
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://www.instagram.com/vgfilms_vl/" title="VGFilms Instagram">
+                    <img src="i/instagram.png">
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.youtube.com/user/vladimirgrv" title="VGFilms Youtube">
+                    <img src="i/youtube.png">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <p>&copy; 2012&ndash;2015 VG&nbsp;FILMS [Video Garage Films]<br />
           Email: <a href="mailto:vgfilms@mail.ru">vgfilms@mail.ru</a><br />
-          URL: www.vgfilms.ru<br />
           Тел.: 8&nbsp;914&nbsp;7000&nbsp;365</p>
         </footer>
       </div>
@@ -382,5 +672,6 @@
     <div id="dialog_video_template" class="hide">
       <iframe width="560" height="315" src="http://www.youtube.com/embed/~id~?vq=hd1080&amp;autoplay=1" allowfullscreen></iframe>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
