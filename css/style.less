@@ -50,7 +50,7 @@
 }
 
 body {
-  font-family: Tahoma;
+  font-family: 'PT Sans', sans-serif;
   background: #000;
   color: #fff;
 }
@@ -140,6 +140,7 @@ body {
     
     &__title {
       font-family: "Stencil";
+      cursor: pointer;
       text-align: center;
       font-size: 2.5rem;
       letter-spacing: 0.2rem;
@@ -392,10 +393,12 @@ footer {
     margin: 10px 5px;
     padding: 10px;
     opacity: 0.5;
-    cursor: pointer;
     height: 150px;
   }
-  .calculator__container:hover, .calculator__container_selected {
+  .calculator__container_switched {
+    cursor: pointer;
+  }
+  .calculator__container_switched:hover, .calculator__container_selected {
     opacity: 1.0;
     background: #eee;
   }

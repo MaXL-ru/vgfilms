@@ -11,6 +11,7 @@
     <link rel="stylesheet/less" href="js/jquery.bxslider/jquery.bxslider.css">
     <link rel="stylesheet/less" href="css/jquery.fancybox.css">
     <link rel="stylesheet/less" href="css/style.less">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
     
     <script src="js/less.min.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -63,13 +64,6 @@
             <div class="column small-3">
               <h2><a name="music"></a>Муз. видео</h2>
             </div>
-            <!--<div class="column small-5 small-offset-1 end">
-              <ul class="small-block-grid-3 video-tags">
-                <li><a href="#" data-tag="rap">Rap music</a></li>
-                <li><a href="#" data-tag="rock">Rock music</a></li>
-                <li><a href="#" data-tag="pop">Pop music</a></li>
-              </ul>
-            </div>-->
           </div>
           <ul class="video-list" style="margin: 0">
             <li>
@@ -401,13 +395,26 @@
       <div class="small-12 content-container_white calc_cont">
         <ul class="small-block-grid-4">
           <li data-ng-repeat="option in options">
-            <div class="calculator__container">
+            <div class="calculator__container"
+                 data-ng-class=" 
+                   !selected.type ||
+                    selected.type.formats.length && !selected.format ||
+                    selected.type.name === 'music' &&
+                    ['voiceSpeaker', 'voiceRecord'].indexOf(value.name) !== -1 ?
+                    '' : 'calculator__container_selected'
+                 ">
               <div class="calculator__options__titale">{{option.title}}</div>
               <div data-ng-repeat="value in option.values">
                 <label>
                   <input type="checkbox"
-                         data-ng-model="selected.options[value.name]"
-                         data-ng-change="selectOption()">
+                     data-ng-model="selected.options[value.name]"
+                     data-ng-change="selectOption()"
+                     data-ng-disabled=" 
+                       !selected.type ||
+                        selected.type.formats.length && !selected.format ||
+                        selected.type.name === 'music' &&
+                        ['voiceSpeaker', 'voiceRecord'].indexOf(value.name) !== -1
+                     ">
                   {{value.title}}
                 </label>
               </div>
@@ -420,8 +427,7 @@
           ЦЕНА ПРОЕКТА: {{totalPrice}} рублей
         </p>
         <p>
-          Внимание!
-          Процесс производства &hellip;
+          Внимание! Данный конфигурация нужен для того чтобы указать ориентировочную стоимость Вашего проекта. Итоговая цена может быть изменена в меньшую/большую сторону в зависимости от сложности работ. Для получения подробного расчета закажите коммерческое предложение.
         </p>
       </div>
     </div>
@@ -643,7 +649,9 @@
           </div>
           <p>&copy; 2012&ndash;2015 VG&nbsp;FILMS [Video Garage Films]<br />
           Email: <a href="mailto:vgfilms@mail.ru">vgfilms@mail.ru</a><br />
-          Тел.: 8&nbsp;914&nbsp;7000&nbsp;365</p>
+          Тел.: 8&nbsp;914&nbsp;7000&nbsp;365<br>
+          <small>Информация представленная на данном ресурсе не является публичной офертой, определяемой положениями ч. 2 ст. 437 Гражданского кодекса Российской Федерации.</small>
+          </p>
         </footer>
       </div>
     </div>

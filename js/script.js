@@ -404,7 +404,7 @@ helpers : {
             drawingBegin    : false,
             drawingMiddle   : false,
             drawingEnd      : false,
-            territoryVl     : true,
+            territoryVl     : false,
             territoryArtem  : false,
             territoryPrim   : false
           }
@@ -417,6 +417,10 @@ helpers : {
           $scope.formats = type.formats;
           
           $scope.selected.format = null;
+          if (type.name === 'music') {
+            $scope.selected.options.voiceSpeaker = false;
+            $scope.selected.options.voiceRecord = false;
+          }
           
           _calculate();
         };
@@ -442,7 +446,7 @@ helpers : {
                   (
                     type && $scope.optionsPrices[type.name] ?
                       $scope.optionsPrices[$scope.selected.type.name] :
-                      alert('Цен нет')
+                      false
                   );
           
           $scope.totalPrice =
@@ -451,10 +455,11 @@ helpers : {
             (s.format ? s.format.price : 0)
             ;
           
-          
-          for (v in $scope.selected.options) {
-            $scope.totalPrice += Number($scope.selected.options[v]) *
-                    optionsPrices[v];
+          if (optionsPrices !== false) {
+            for (v in $scope.selected.options) {
+              $scope.totalPrice += Number($scope.selected.options[v]) *
+                      optionsPrices[v];
+            }
           }
         };
       }
