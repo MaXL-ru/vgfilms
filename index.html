@@ -10,6 +10,8 @@
     <link rel="stylesheet/less" href="css/style1.css">
     <link rel="stylesheet/less" href="js/jquery.bxslider/jquery.bxslider.css">
     <link rel="stylesheet/less" href="css/jquery.fancybox.css">
+    <link rel="stylesheet/less" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
+    <link rel="stylesheet/less" href="js/jquery-ui-1.11.4/jquery-ui.theme.min.css">
     <link rel="stylesheet/less" href="css/style.less">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
     
@@ -20,6 +22,7 @@
     <script src="js/jquery.bpopup.min.js"></script>
     <script src="js/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
     <script src="js/angular.min.js"></script>
   </head>
   <body>
@@ -392,6 +395,23 @@
         </ul>
       </div>
       
+      <div class="calculator__title">
+        <div class="row">
+          <div class="column small-3" style="padding-top: 12px;">
+            Кол-во сцен: ({{selected.scenesQuantity}})
+          </div>
+          <div class="column small-9">
+            <div class="range-slider" data-slider
+                 data-options="initial: 1;start: 1; end: 19;">
+              <span class="range-slider-handle" role="slider" tabindex="0"></span>
+              <span class="range-slider-active-segment"></span>
+              <input type="hidden"
+                   class="calculator__scenes__quantity">
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div class="small-12 content-container_white calc_cont">
         <ul class="small-block-grid-4">
           <li data-ng-repeat="option in options">
@@ -400,7 +420,7 @@
                    !selected.type ||
                     selected.type.formats.length && !selected.format ||
                     selected.type.name === 'music' &&
-                    ['voiceSpeaker', 'voiceRecord'].indexOf(value.name) !== -1 ?
+                    option.title === 'Звук' ?
                     '' : 'calculator__container_selected'
                  ">
               <div class="calculator__options__titale">{{option.title}}</div>
@@ -423,10 +443,10 @@
         </ul>
       </div>
       <div class="small-12 content-container_white calc_cont">
-        <p>
-          ЦЕНА ПРОЕКТА: {{totalPrice}} рублей
+        <p style="padding-left: 10px;">
+          ЦЕНА ПРОЕКТА: <b>{{totalPrice}}</b> рублей
         </p>
-        <p>
+        <p style="padding-left: 10px; padding-bottom: 10px;">
           Внимание! Данный конфигурация нужен для того чтобы указать ориентировочную стоимость Вашего проекта. Итоговая цена может быть изменена в меньшую/большую сторону в зависимости от сложности работ. Для получения подробного расчета закажите коммерческое предложение.
         </p>
       </div>

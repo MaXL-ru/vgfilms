@@ -100,8 +100,8 @@ helpers : {
   vgCalculator.controller(
     'vgCalculatorController',
     [
-      '$scope',
-      function ($scope) {
+      '$scope', '$interval',
+      function ($scope, $interval) {
         $scope.types = [
           {
             title: 'Реклама',
@@ -388,6 +388,27 @@ helpers : {
             territoryPrim   : 10000
           }
         };
+        $scope.scenesPrices = [
+          0,
+          0,
+          5000,
+          10000,
+          15000,
+          19000,
+          23000,
+          26000,
+          29000,
+          31000,
+          33000,
+          35000,
+          37000,
+          38500,
+          40000,
+          41500,
+          42500,
+          43500,
+          44500
+        ];
         
         $scope.formats = [];
         
@@ -409,6 +430,8 @@ helpers : {
             territoryPrim   : false
           }
         };
+        
+        $scope.scenePrice = 0;
         
         $scope.totalPrice = 0;
         
@@ -434,6 +457,20 @@ helpers : {
         $scope.selectOption = function () {
           _calculate();
         };
+
+        $interval(
+          function () {
+            $scope.selected.scenesQuantity =
+                    $('.calculator__scenes__quantity').val();
+            
+            $scope.scenePrice = Math.round(
+              $scope.scenesPrices[$scope.selected.scenesQuantity - 1] /
+              $scope.selected.scenesQuantity
+            );
+            _calculate();
+          },
+          200
+        );
         
         var _calculate = function () {
           var s = $scope.selected,
@@ -453,7 +490,8 @@ helpers : {
             (s.type ? s.type.price : 0)
             +
             (s.format ? s.format.price : 0)
-            ;
+            +
+            $scope.scenesPrices[$scope.selected.scenesQuantity - 1];
           
           if (optionsPrices !== false) {
             for (v in $scope.selected.options) {
