@@ -367,50 +367,16 @@
         <div class="calculator__title">
           Тип проекта
         </div>
-        <ul class="small-block-grid-5" data-ng-repeat="type in types">
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">{{type.name}}</div>
-            <div class="calculator__type-description">
-              {{type.description}}
-            </div>
-
-          </div></li>
-        </ul>
         <ul class="small-block-grid-5">
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Реклама</div>
-            <div class="calculator__type-description">
-              Проекты, содержащие прямую рекламу
+          <li data-ng-repeat="type in types">
+            <div class="calculator__container calculator__container_switched"
+                 data-ng-click="selectType(type)">
+              <div class="calculator__type-name">{{type.title}}</div>
+              <div class="calculator__type-description">
+                {{type.description}}
+              </div>
             </div>
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Музыкальное видео</div>
-            <div class="calculator__type-description">
-              Проекты музыкального характера в исполнении артистов
-            </div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Спортивное видео</div>
-            <div class="calculator__type-description">
-              Проекты, действующие в рамках определённых видов спорта
-            </div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Арт видео</div>
-            <div class="calculator__type-description">
-              Проекты, относящие к разряду напрвлений исскуства, не носящих рекламынй характер
-            </div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Фильм</div>
-            <div class="calculator__type-description">
-              Короткометражные фильмы
-            </div>
-
-          </div></li>
+          </li>
         </ul>
       </div>
       
@@ -419,27 +385,44 @@
           Формат
         </div>
         <ul class="small-block-grid-5">
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Авто\Мото спорт</div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Вело спорт</div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Водный спорт</div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Комадный спорт</div>
-
-          </div></li>
-          <li><div class="calculator__container">
-            <div class="calculator__type-name">Другое</div>
-
-          </div></li>
+          <li data-ng-repeat="format in formats">
+            <div class="calculator__container calculator__container_switched"
+                 data-ng-click="selectFormat(format)">
+              <div class="calculator__type-name">{{format.title}}</div>
+              <div class="calculator__type-description"
+                   data-ng-if="format.description">
+                {{format.description}}
+              </div>
+            </div>
+          </li>
         </ul>
+      </div>
+      
+      <div class="small-12 content-container_white calc_cont">
+        <ul class="small-block-grid-4">
+          <li data-ng-repeat="option in options">
+            <div class="calculator__container">
+              <div class="calculator__options__titale">{{option.title}}</div>
+              <div data-ng-repeat="value in option.values">
+                <label>
+                  <input type="checkbox"
+                         data-ng-model="selected.options[value.name]"
+                         data-ng-change="selectOption()">
+                  {{value.title}}
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="small-12 content-container_white calc_cont">
+        <p>
+          ЦЕНА ПРОЕКТА: {{totalPrice}} рублей
+        </p>
+        <p>
+          Внимание!
+          Процесс производства &hellip;
+        </p>
       </div>
     </div>
     

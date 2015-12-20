@@ -72,7 +72,7 @@ $(document).ready(function () {
       }
     });
   })();
-  $('.calculator__container').click(function () {
+  $('.calculator').on('click', '.calculator__container_switched', function () {
     var $el = $(this);
     
     $el.closest('ul').find('.calculator__container')
@@ -104,20 +104,359 @@ helpers : {
       function ($scope) {
         $scope.types = [
           {
-            name: 'Реклама',
+            title: 'Реклама',
+            name: 'adv',
+            price: 0,
             description: 'Проекты, содержащие прямую рекламу',
             formats: [
-              '1', '2', '3', '4', '5'
+              {
+                title: 'ТВ / Кинотеатр',
+                name: 'tv',
+                description: '(10 - 30 сек)',
+                price: 25000
+              },
+              {
+                title: 'Интернет-ресурс',
+                name: 'internet',
+                description: '(50 - 90 сек)',
+                price: 36000
+              },
+              {
+                title: 'Презентационный',
+                name: 'presentation',
+                description: '(90 - 300 сек)',
+                price: 70000
+              }
             ]
           },
           {
-            name: 'Музыкальное видео',
+            title: 'Музыкальное видео',
+            name: 'music',
+            price: 15000,
             description: 'Проекты музыкального характера в исполнении артистов',
             formats: [
-              '1', '2', '3', '4', '5'
+              {
+                title: 'Рок',
+                price: 5000
+              },
+              {
+                title: 'Реп',
+                price: 10000
+              },
+              {
+                title: 'Поп',
+                price: 10000
+              },
+              {
+                title: 'LIVE-выступления',
+                price: 20000
+              },
+              {
+                title: 'Другое',
+                price: 0
+              }
             ]
+          },
+          {
+            title: 'Спортивное видео',
+            name: 'sport',
+            price: 20000,
+            description: 'Проекты, действующие в рамках определённых видов спорта',
+            formats: [
+              {
+                title: 'Авто\мото спорт',
+                price: 5000
+              },
+              {
+                title: 'Вело спорт',
+                price: 0
+              },
+              {
+                title: 'Водный спорт',
+                price: 5000
+              },
+              {
+                title: 'Командный спорт',
+                price: 10000
+              },
+              {
+                title: 'Другое',
+                price: 0
+              }
+            ]
+          },
+          {
+            title: 'Арт видео',
+            name: 'art',
+            price: 20000,
+            description: 'Проекты, относящие к разряду напрвлений исскуства, не носящих рекламынй характер',
+            formats: []
+          },
+          {
+            title: 'Фильм',
+            name: 'film',
+            price: 20000,
+            description: 'Короткометражные фильмы',
+            formats: []
           }
         ];
+        
+        $scope.options = [
+          {
+            title: 'Звук',
+            values: [
+              {
+                name : 'voiceSpeaker',
+                title: 'Голос диктора'
+              },
+              {
+                name : 'voiceRecord',
+                title: 'Запись звука'
+              }
+            ]
+          },
+          {
+            title: 'Анимация',
+            values: [
+              {
+                name : 'animationBegin',
+                title: 'Начало'
+              },
+              {
+                name : 'animationMiddle',
+                title: 'Середина'
+              },
+              {
+                name : 'animationEnd',
+                title: 'Конец'
+              }
+            ]
+          },
+          {
+            title: 'Графика',
+            values: [
+              {
+                name : 'drawingBegin',
+                title: 'Начало'
+              },
+              {
+                name : 'drawingMiddle',
+                title: 'Середина'
+              },
+              {
+                name : 'drawingEnd',
+                title: 'Конец'
+              }
+            ]
+          },
+          {
+            title: 'Территория',
+            values: [
+              {
+                name : 'territoryVl',
+                title: 'Владивосток'
+              },
+              {
+                name : 'territoryArtem',
+                title: 'Артём'
+              },
+              {
+                name : 'territoryPrim',
+                title: 'Приморский край'
+              }
+            ]
+          },
+        ];
+        
+        $scope.optionsPrices = {
+          // adv
+          tv: {
+            // sound
+            voiceSpeaker    : 3000,
+            voiceRecord     : 2000,
+            // animation
+            animationBegin  : 2000,
+            animationMiddle : 2000,
+            animationEnd    : 2000,
+            // drawing
+            drawingBegin    : 3000,
+            drawingMiddle   : 3000,
+            drawingEnd      : 3000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 5000
+          },
+          internet: {
+            // sound
+            voiceSpeaker    : 3000,
+            voiceRecord     : 3000,
+            // animation
+            animationBegin  : 3000,
+            animationMiddle : 3000,
+            animationEnd    : 3000,
+            // drawing
+            drawingBegin    : 4000,
+            drawingMiddle   : 4000,
+            drawingEnd      : 4000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 5000
+          },
+          presentation: {
+            // sound
+            voiceSpeaker    : 5000,
+            voiceRecord     : 5000,
+            // animation
+            animationBegin  : 3000,
+            animationMiddle : 3000,
+            animationEnd    : 3000,
+            // drawing
+            drawingBegin    : 5000,
+            drawingMiddle   : 5000,
+            drawingEnd      : 5000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 10000
+          },
+          music: {
+            voiceSpeaker    : 0,
+            voiceRecord     : 0,
+            animationBegin  : 2000,
+            animationMiddle : 2000,
+            animationEnd    : 2000,
+            drawingBegin    : 3000,
+            drawingMiddle   : 3000,
+            drawingEnd      : 3000,
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 5000
+          },
+          // sport
+          sport: {
+            // sound
+            voiceSpeaker    : 3000,
+            voiceRecord     : 2000,
+            // animation
+            animationBegin  : 3000,
+            animationMiddle : 3000,
+            animationEnd    : 3000,
+            // drawing
+            drawingBegin    : 5000,
+            drawingMiddle   : 5000,
+            drawingEnd      : 5000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 10000
+          },
+          art: {
+            // sound
+            voiceSpeaker    : 3000,
+            voiceRecord     : 3000,
+            // animation
+            animationBegin  : 3000,
+            animationMiddle : 3000,
+            animationEnd    : 3000,
+            // drawing
+            drawingBegin    : 5000,
+            drawingMiddle   : 5000,
+            drawingEnd      : 5000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 3000,
+            territoryPrim   : 8000
+          },
+          // film
+          film: {
+            // sound
+            voiceSpeaker    : 5000,
+            voiceRecord     : 5000,
+            // animation
+            animationBegin  : 3000,
+            animationMiddle : 5000,
+            animationEnd    : 3000,
+            // drawing
+            drawingBegin    : 5000,
+            drawingMiddle   : 10000,
+            drawingEnd      : 5000,
+            // territory
+            territoryVl     : 0,
+            territoryArtem  : 5000,
+            territoryPrim   : 10000
+          }
+        };
+        
+        $scope.formats = [];
+        
+        $scope.selected = {
+          type          : null,
+          format        : null,
+          scenesQuantity: 0,
+          options       : {
+            voiceSpeaker    : false,
+            voiceRecord     : false,
+            animationBegin  : false,
+            animationMiddle : false,
+            animationEnd    : false,
+            drawingBegin    : false,
+            drawingMiddle   : false,
+            drawingEnd      : false,
+            territoryVl     : true,
+            territoryArtem  : false,
+            territoryPrim   : false
+          }
+        };
+        
+        $scope.totalPrice = 0;
+        
+        $scope.selectType = function (type) {
+          $scope.selected.type = type;
+          $scope.formats = type.formats;
+          
+          $scope.selected.format = null;
+          
+          _calculate();
+        };
+        
+        $scope.selectFormat = function (format) {
+          $scope.selected.format = format;
+          
+          _calculate();
+        };
+        
+        $scope.selectOption = function () {
+          _calculate();
+        };
+        
+        var _calculate = function () {
+          var s = $scope.selected,
+              v,
+              format = $scope.selected.format,
+              type = $scope.selected.type,
+              optionsPrices =
+                format && $scope.optionsPrices[format.name] ?
+                  $scope.optionsPrices[$scope.selected.format.name] :
+                  (
+                    type && $scope.optionsPrices[type.name] ?
+                      $scope.optionsPrices[$scope.selected.type.name] :
+                      alert('Цен нет')
+                  );
+          
+          $scope.totalPrice =
+            (s.type ? s.type.price : 0)
+            +
+            (s.format ? s.format.price : 0)
+            ;
+          
+          
+          for (v in $scope.selected.options) {
+            $scope.totalPrice += Number($scope.selected.options[v]) *
+                    optionsPrices[v];
+          }
+        };
       }
     ]
   );
