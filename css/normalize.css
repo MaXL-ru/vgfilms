@@ -61,7 +61,7 @@ video {
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
+ * Remove excess height in iOS  5 devices.
  */
 
 audio:not([controls]) {
@@ -136,6 +136,8 @@ h1, h2, h3, .span_h2, .span_h3 {
   margin-top: 0;
   font-family: 'PT Sans', sans-serif;
   color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 h1 {

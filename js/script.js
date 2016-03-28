@@ -33,6 +33,7 @@ $(document).ready(function () {
   });
   
   $(document).foundation();
+  
   $('.video-list').bxSlider({
     auto: false,
     adaptiveHeight: false,
@@ -46,7 +47,7 @@ $(document).ready(function () {
     nextText: 'Вперёд',
     prevText: 'Назад'
   });
-  $('.photo-list').bxSlider({
+  $('.slider-list').bxSlider({
     auto: false,
     adaptiveHeight: false,
     controls: true,
