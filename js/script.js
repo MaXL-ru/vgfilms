@@ -60,7 +60,7 @@ $(document).ready(function () {
     nextText: 'Вперёд',
     prevText: 'Назад'
   });
-  
+  /*
   (function () {
     var secondaryNav = $('.header__line'),
       secondaryNavTopPosition = secondaryNav.offset().top;
@@ -72,7 +72,7 @@ $(document).ready(function () {
         secondaryNav.removeClass('is-fixed');
       }
     });
-  })();
+  })();*/
   $('.calculator').on('click', '.calculator__container_switched', function () {
     var $el = $(this);
     
@@ -95,7 +95,7 @@ helpers : {
 
 });
 
-(function () {
+/*(function () {
   var vgCalculator = angular.module('vgAngular', []);
   
   vgCalculator.controller(
@@ -507,3 +507,4 @@ helpers : {
   
   angular.bootstrap(document, ['vgAngular']);
 })();
+*/
