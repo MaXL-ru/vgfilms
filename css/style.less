@@ -92,7 +92,7 @@ body {
 */
 
 .background-black {
-  background: #000 url(../i/baground-black.png);
+  background: #000 url(../i/baground-black.png) bottom left;
 }
 
 .background-grey {
@@ -110,8 +110,13 @@ body {
   color: #fff;
   height: 7.375rem;
   
-  .menu {
-    font-size: 2rem;
+  .menu__open {
+    a {
+      display: inline-block;
+      background: url(../i/icon_nav.png) no-repeat 0 0.3rem;
+      padding: 0 0 0 1.5rem;
+      font-size: 0.8rem;
+    }
   }
   
   .site_title {
@@ -121,8 +126,28 @@ body {
   }
 }
 
+.menu {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 0.7rem;
+  background: #0d0d0e url(../i/bg_header.png) center bottom;
+  &__item {
+    display: inline-block;
+    background: url(../i/icon_menu.png) no-repeat 0 0.5rem;
+    padding-left: 1rem;
+  }
+
+  &__close {
+    display: inline-block;
+    background: url(../i/bg_close_this_link.png) no-repeat 0 0.4rem;
+    padding-left: 1.3rem;
+  }
+}
+
 .logo {
   position: absolute;
+  z-index: 3;
   margin: -65px 0 0 6rem;
   a {
     display: inline-block;

@@ -25,9 +25,9 @@
     <header class="header"><div class="header__container">
       <div class="row">
         <div class="column small-2 small-offset-1">
-          <nav class="menu">
-            МЕНЮ
-          </nav>
+          <div class="menu__open">
+            <a href="#">МЕНЮ</a>
+          </div>
         </div>
         <div class="column small-6">
           <div class="site_title">VIDEO GARAGE FILMS</div>
@@ -69,6 +69,31 @@
       </div>
     </div></header>
     
+    <nav class="menu" style="display: none;">
+        <div class="row">
+          <div class="column small-3">s</div>
+          <div class="column small-7">
+            <ul class="small-block-grid-6">
+              <li>
+                <a href="#" data-item-name="adv" class="menu__item">Реклама</a>
+              </li>
+              <li>
+                <a href="#" data-item-name="music" class="menu__item">Муз. видео</a>
+              </li>
+              <li>
+                <a href="#" data-item-name="art" class="menu__item">Арт видео</a>
+              </li>
+              <li>
+                <a href="#" data-item-name="eqp" class="menu__item">Оборудование</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column small-2">
+            <a href="#" class="menu__close">закрыть</a>
+          </div>
+        </div>
+      </nav>
+    
     <div class="intro-video background-grey">
       <video width="100%" loop autoplay poster="http://vgfilms.ru/assets/templates/templ/i/top_bg.jpg">
         <source src="http://vgfilms.ru/assets/files/video/video1.mp4?" type="video/mp4">
@@ -79,7 +104,7 @@
       <div class="row"><div class="column small-12">
           
         <div class="advertisement">
-          <span class="span_h2">Реклама</span>
+          <span class="span_h2" data-item="adv">Реклама</span>
           <ul class="video-list" style="margin: 0">
             <li>
               <div class="view view-first" data-youtube-id="Uf49lXpIjag">
@@ -175,7 +200,7 @@
     
     <div class="background-black"><div class="row"><div class="column small-12">
       <div class="music-video">
-        <span class="span_h2">Музыкальное видео</span>
+        <span class="span_h2" data-item="music">Музыкальное видео</span>
         <ul class="video-list" style="margin: 0">
           <li>
             <div class="view view-first" data-youtube-id="Uf49lXpIjag">
@@ -230,7 +255,7 @@
       </div>
           
       <div class="art-video">
-        <span class="span_h2">Арт видео</span>
+        <span class="span_h2" data-item="art">Арт видео</span>
         <ul class="video-list" style="margin: 0">
           <li>
             <div class="view view-first" data-youtube-id="Uf49lXpIjag">
@@ -287,12 +312,28 @@
     
     <section class="equipment">
       <div class="row"><div class="column-12">
-        <span class="span_h2">Оборудование</span>
+        <span class="span_h2" data-item="eqp">Оборудование</span>
         <ul class="slider-list" style="margin: 0">
-          <li><img src="i/01.png" width="70%"></li>
-          <li><img src="i/02.png" width="70%"></li>
-          <li><img src="i/03.png" width="70%"></li>
-          <li><img src="i/04.png" width="70%"></li>
+          <li>
+            <a title="Квадрокоптер" href="#photo1">
+              <img src="i/01.png" alt="Inspire" width="70%">
+            </a>
+          </li>
+          <li>
+            <a title="Подводный бокс" href="#photo2">
+              <img src="i/02.png" alt="Inspire" width="70%">
+            </a>
+          </li>
+          <li>
+            <a title="Дым машина" href="#photo3">
+              <img src="i/03.png" alt="Inspire" width="70%">
+            </a>
+          </li>
+          <li>
+            <a title="Камера" href="#photo4">
+              <img src="i/04.png" alt="Inspire" width="70%">
+            </a>
+          </li>
           <li><img src="i/05.png" width="70%"></li>
           <li><img src="i/06.png" width="70%"></li>
           <li><img src="i/07.png" width="70%"></li>
@@ -341,7 +382,7 @@
       <div class="footer__inner"><div class="footer__inner-second">
         <div class="row">
           <div class="column small-2">
-            <a href="">ВВЕРХ</a>
+            <a href="#" class="go-top">ВВЕРХ</a>
           </div>
           <div class="column small-8">
             <div class="text-center">VIDEO GARAGE FILMS</div>
@@ -370,6 +411,136 @@
         src="http://www.youtube.com/embed/~id~?vq=hd1080&amp;autoplay=1"
         allowfullscreen></iframe>
     </div>
+    
+    
+    
+    <div class="hide">
+                <div id="photo1"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/01.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Квадракоптер</div>
+                      <p>Аэросъемка с&nbsp;неба на&nbsp;большой удаленности.<br />
+                      Максимальная скорость: 80&nbsp;км/ч<br />
+                      Максимальная высота полета: 4500&nbsp;м<br />
+                      Максимально допустимая скорость ветра: 10&nbsp;м/с<br />
+                      Максимальное время полета: около 18&nbsp;минут<br />
+                      Зависание в&nbsp;помещении: активно по&nbsp;умолчанию<br />
+                      Диапазон рабочих температур: От&nbsp;-10&deg; до&nbsp;40&deg; C</p>
+                      <p>Сенсор: CMOS Sony EXMOR 1/2,3''<br />
+                      Рабочее разрешение: 12,4&nbsp;Мпикс<br />
+                      Максимальный размер изображения 4000&times;3000<br />
+                      Диапазон ISO: 100&ndash;6400<br />
+                      FOV (Поле зрения): 94&deg;<br />
+                      Объектив: f/2,8 (аналог 20&nbsp;мм)<br />
+                      9 элементов в&nbsp;9 группах<br />
+                      Асферический объектив<br />
+                      Фильтр искажений<br />
+                      Ультрафиолетовый фильтр<br />
+                      Режим записи видео: UHD (4K): 4096&times;2160p24/25?3840&times;2160p24/25/30; FHD: 1920&times;1080p24/25/30/48/50/60; HD: 1280&times;720p24/25/30/48/50/60<br />
+                      Скорость передачи данных для хранения видео 60&nbsp;Мбит/с</p>
+                  </div>
+                </div></div>
+      
+      
+                <div id="photo2"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/02.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Подводный бокс</div>
+                      <p>Изготовленный специально для камеры Sony <nobr>NEX-5</nobr>, этот бокс, позволяет осуществлять фото и&nbsp;видео съемку под водой на&nbsp;глубине до&nbsp;40&nbsp;метров, кроме того, он&nbsp;способен защитить камеру от&nbsp;ударов и&nbsp;даже во&nbsp;время падения на&nbsp;жесткую поверхность с&nbsp;высоты 1&nbsp;метр. Для обеспечения эффективной работы вспышки под водой, на&nbsp;боксе предусмотрен диффузорный рассеиватель.</p>
+                      <p>Безопасная глубина погружения: 40&nbsp;м, (станадрт IPX 8)<br />
+                      Безопасная высота падения: 1&nbsp;м<br />
+                      Рабочая температура: -5&nbsp;&mdash; <nobr>40 &deg;C</nobr>&deg;<br />
+                      Материал: поликарбонат, резина, сталь<br />
+                      Габариты: 160 / 125 / 95&nbsp;мм<br />
+                      Вес: 420гр</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo3"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/03.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Дым машина</div>
+                    <p>Генераторы дыма и&nbsp;тумана используются для создания эффекта объёмности света в&nbsp;пространстве во&nbsp;время выступления артистов или во&nbsp;время танцев либо просто для эффекта задымления.<br />
+                    В&nbsp;незадымлённой среде свет не&nbsp;отражается от&nbsp;воздуха и&nbsp;можно лишь наблюдать только бегающие по&nbsp;полу и&nbsp;стенам разноцветные пятна. С&nbsp;присутствием в&nbsp;помещении задымления пространство заполняется объёмными лучами двигающимися под музыку, создавая при этом потрясающую атмосферу<br />
+                    Дым машина,<br />
+                    0,5 л&nbsp;емкость для жидкости,<br />
+                    мощность: 600 W,<br />
+                    вес: 3,5 кг.,<br />
+                    управление: on/off кабель управление,<br />
+                    время нагрева: 8&nbsp;мин.<br />
+                    выход дыма на&nbsp;4&nbsp;м</p>
+                  </div>
+                </div></div>
+    
+                <div id="photo4"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/04.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Камера</div>
+                    <p>Canon 70d<br />
+                    20,<nobr>2-мегапиксельная</nobr> <nobr>КМОП-матрица</nobr> формата <nobr>APS-C</nobr> &laquo;Dual Pixel CMOS AF&raquo;;<br />
+                    расположенные на&nbsp;матрице датчики фазовой фокусировки;<br />
+                    процессор DIGIC 5+;<br />
+                    видеосъемка 1080p30 с&nbsp;автофокусом и&nbsp;возможностью использования внешнего микрофона;<br />
+                    система автофокуса на&nbsp;основе 19 крестообразных датчиков с&nbsp;чувствительностью до&nbsp;-0,5 EV;<br />
+                    Nikon D600<br />
+                    Сенсор размера 35,9&times;24&nbsp;мм с&nbsp;разрешением 24&nbsp;миллиона пикселей. Диапазон чувствительности&nbsp;&mdash; от&nbsp;100 до&nbsp;6400 единиц;<br />
+                    Запись Full HD&nbsp;видео до&nbsp;30 кадров за&nbsp;секунду, высокий битрейт, ручные настройки, некомпрессионный выход HDMI, вход для микрофона и&nbsp;наушников, ручной контроль уровня громкости</p>
+                  </div>
+                </div></div>
+                
+                <div id="photo5"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/05.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Операторский кран</div>
+                    <p>Использование операторского крана, дает возможность получить значительные преимущества при работе с&nbsp;камерой, как в&nbsp;студии, так и&nbsp;на&nbsp;выезде, по&nbsp;сравнению с&nbsp;работой видеокамерой с&nbsp;плеча или со&nbsp;штатива. Внутрикадровая динамика меняющегося видеоряда создает эффект завораживающий зрителя.<br />
+                    Характеристика:<br />
+                    Длинна стрелы 4.5&nbsp;м;<br />
+                    <nobr>2-ых</nobr> позиционная голова;<br />
+                    Дистанционное управление головой;<br />
+                    Дистанционное управление zoom.</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo6"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/06.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Комплект объективов</div>
+                    <p>Объектив Sigma 18&ndash;35 f1,8;<br />
+                    Объектив Nikon 24&ndash;85&nbsp;мм;<br />
+                    Объектив Nikon 80&ndash;200&nbsp;мм;<br />
+                    Объектив Nikon 85&nbsp;мм;<br />
+                    Объектив Nikon 35&nbsp;мм;<br />
+                    Объектив Nikon 24&nbsp;мм;<br />
+                    Объектив 16&nbsp;мм, f2,8<br />
+                    Объектив Sony 16&nbsp;мм;<br />
+                    Объектив Sony 16&ndash;50&nbsp;мм;</p>
+                  </div>
+                </div></div>
+      
+                <div id="photo7"><div class="row">
+                  <div class="column small-3">
+                    <img src="i/07.png" alt="Inspire">
+                  </div>
+                  <div class="column small-9">
+                    <div class="photo-list__title_info">Система прожекторов</div>
+                    
+                  </div>
+                </div></div>
+      
+</div>
+    
     
     <script src="js/script.js"></script>
   </body>
